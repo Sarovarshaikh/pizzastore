@@ -1,183 +1,136 @@
-const PizzaOne = document.getElementsByClassName('PizzaOne')[0];
-const PizzaTwo = document.getElementsByClassName('PizzaTwo')[0];
-const dropPoint = document.getElementsByClassName('dropPoint')[0];
-//==============================Second=====================================
-const Pizza1 = document.getElementsByClassName('Pizza1')[0];
-const Pizza2 = document.getElementsByClassName('Pizza2')[0];
-const Pizza3 = document.getElementsByClassName('Pizza3')[0];
-const Pizza4 = document.getElementsByClassName('Pizza4')[0];
-const list = document.querySelector('.list')
+const draggableElement1 = document.getElementById("draggable-element1");
+const draggableElement2 = document.getElementById("draggable-element2");
+const dropZone = document.getElementById("dropzone");
+let lists = document.querySelectorAll(".list");
+const greet = document.querySelector(".greet");
+const ingredient_title = document.querySelector('.ingredient-title')
 
-let tukzer = document.getElementsByClassName('kudos');
-
-
-
-
-PizzaOne.addEventListener('dragstart', PizzaOneDragStart)
-
-function PizzaOneDragStart(e) {
-    console.log('DragStart')
-    e.target.className += ' hold'
-}
-
-PizzaOne.addEventListener('dragend', PizzaOneDragEnd)
-
-function PizzaOneDragEnd(e) {
-    console.log('dragend')
-    e.target.className = "PizzaOne"
-}
-
-
-PizzaOne.addEventListener("dragover", PizzaOneDragOver);
-
-function PizzaOneDragOver(e) {
-    e.preventDefault();
-    setTimeout(() => {
-        dropPoint.classList.add("pizzabaseOne");
-        dropPoint.classList.remove("pizzabaseTwo");
-    }, 0);
-}
-
-
-PizzaTwo.addEventListener('dragstart', PizzaTwoDragStart);
-
-function PizzaTwoDragStart(e) {
-    console.log('DragStart')
-    e.target.className += ' hold';
-}
-
-PizzaTwo.addEventListener('dragend', PizzaTwoDragEnd)
-
-function PizzaTwoDragEnd(e) {
-    console.log('dragend')
-    e.target.className = "PizzaTwo";
-}
-
-PizzaTwo.addEventListener("dragover", PizzaTwoDragOver)
-
-function PizzaTwoDragOver(e) {
-    e.preventDefault();
-    setTimeout(() => {
-        dropPoint.classList.add("pizzabaseTwo");
-    }, 0);
-};
-
-Pizza1.addEventListener('dragstart', Pizza1DragStart)
-
-function Pizza1DragStart(e) {
-    console.log('DragStart')
-    e.target.className += ' hold'
-}
-
-Pizza1.addEventListener('dragend', Pizza1DragEnd)
-
-function Pizza1DragEnd(e) {
-    console.log('dragend')
-    e.target.className = 'Pizza1'
-}
-
-Pizza1.addEventListener("dragover", Pizza1DragOver);
-
-function Pizza1DragOver(e) {
-    e.preventDefault();
-    setTimeout(() => {
-        dropPoint.classList.add("Pizza1Pepperoni");
-        dropPoint.classList.remove("Pizza1Mushrooms");
-        dropPoint.classList.remove("Pizza1Peppers");
-        dropPoint.classList.remove("Pizza1Onions");
-    }, 0);
-}
-
-Pizza2.addEventListener('dragstart', Pizza2DragStart);
-
-function Pizza2DragStart(e) {
-    console.log('DragStart')
-    e.target.className += ' hold'
-}
-
-Pizza2.addEventListener('dragend', Pizza2DragEnd);
-
-function Pizza2DragEnd(e) {
-    console.log('dragend')
-    e.target.className = 'Pizza2'
-}
-
-
-Pizza2.addEventListener("dragover", Pizza2DragOver);
-
-function Pizza2DragOver(e) {
-    e.preventDefault();
-    setTimeout(() => {
-        dropPoint.classList.add("Pizza1Mushrooms");
-        dropPoint.classList.remove("Pizza1Pepperoni");
-        dropPoint.classList.remove("Pizza1Peppers");
-        dropPoint.classList.remove("Pizza1Onions");
-    }, 0);
-}
-
-
-Pizza3.addEventListener('dragstart', Pizza3DragStart);
-
-function Pizza3DragStart(e) {
-    console.log('DragStart')
-    e.target.className += ' hold'
-}
-
-Pizza3.addEventListener('dragend', Pizza3DragEnd);
-function Pizza3DragEnd(e) {
-    console.log('dragend')
-    e.target.className = 'Pizza3'
-}
-
-Pizza3.addEventListener("dragover", Pizza3DragOver);
-
-function Pizza3DragOver(e) {
-    e.preventDefault();
-    setTimeout(() => {
-        dropPoint.classList.add("Pizza1Onions");
-        dropPoint.classList.remove("Pizza1Mushrooms");
-        dropPoint.classList.remove("Pizza1Pepperoni");
-        dropPoint.classList.remove("Pizza1Peppers");
-    }, 0);
-}
-
-Pizza4.addEventListener('dragstart', Pizza4DragStart);
-
-function Pizza4DragStart(e) {
-    console.log('DragStart')
-    e.target.className += ' hold'
-}
-
-Pizza4.addEventListener('dragend', Pizza4DragEnd)
-
-function Pizza4DragEnd(e) {
-    console.log('dragend')
-    e.target.className = 'Pizza4'
-}
-
-Pizza4.addEventListener("dragover", Pizza4DragOver);
-function Pizza4DragOver(e) {
-    e.preventDefault();
-    setTimeout(() => {
-        dropPoint.classList.add("Pizza1Peppers");
-        dropPoint.classList.remove("Pizza1Onions");
-        dropPoint.classList.remove("Pizza1Mushrooms");
-        dropPoint.classList.remove("Pizza1Pepperoni");
-    }, 0);
-}
-
-dropPoint.addEventListener("dragenter", function (e) {
-    e.preventDefault()
-    console.log('DragEnter')
-    list.style.display = 'flex';
-
+draggableElement1.addEventListener("dragover", function (e) {
+  e.preventDefault();
+  setTimeout(() => {
+    dropZone.classList.add("add1");
+    dropZone.classList.remove("add2");
+    dropZone.classList.remove("pizza1");
+    dropZone.classList.remove("pizza2");
+    dropZone.classList.remove("pizza3");
+    greet.style.visibility = "hidden";
+  }, 1000);
 });
-dropPoint.addEventListener("dragleave", function (e) {
-    e.preventDefault()
-    console.log("dragleave")
-
+draggableElement1.addEventListener("touchend", function (e) {
+  e.preventDefault();
+  setTimeout(() => {
+    dropZone.classList.add("add1");
+    dropZone.classList.remove("add2");
+    dropZone.classList.remove("pizza1");
+    dropZone.classList.remove("pizza2");
+    dropZone.classList.remove("pizza3");
+    greet.style.visibility = "hidden";
+    document.getElementById("ul").style.visibility = "visible";
+    ingredient_title.style.visibility = "visible";
+  }, 500);
 });
-dropPoint.addEventListener("drop", function (e) {
-    e.preventDefault();
-    console.log('Drop workingg............!!!!');
+
+
+
+draggableElement2.addEventListener("dragover", function (e) {
+  e.preventDefault();
+  setTimeout(() => {
+    dropZone.classList.add("add2");
+    dropZone.classList.remove("add1");
+    dropZone.classList.remove("pizza1");
+    dropZone.classList.remove("pizza2");
+    dropZone.classList.remove("pizza3");
+    greet.style.visibility = "hidden";
+  }, 1000);
+});
+draggableElement2.addEventListener("touchend", function (e) {
+  e.preventDefault();
+  setTimeout(() => {
+    dropZone.classList.add("add2");
+    dropZone.classList.remove("add1");
+    dropZone.classList.remove("pizza1");
+    dropZone.classList.remove("pizza2");
+    dropZone.classList.remove("pizza3");
+    greet.style.visibility = "hidden";
+    document.getElementById("ul").style.visibility = "visible";
+    ingredient_title.style.visibility = "visible";
+  }, 500);
+});
+
+lists.forEach((element, index) => {
+  if (index === 0) {
+    element.addEventListener("dragover", function (e) {
+      e.preventDefault();
+      setTimeout(() => {
+        dropZone.classList.add("pizza1");
+        dropZone.classList.remove("pizza2");
+        dropZone.classList.remove("pizza3");
+        greet.style.visibility = "visible";
+      }, 1000);
+    });
+
+    element.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      setTimeout(() => {
+        dropZone.classList.add("pizza1");
+        dropZone.classList.remove("pizza2");
+        dropZone.classList.remove("pizza3");
+        greet.style.visibility = "visible";
+      }, 1000);
+    });
+    
+    
+  } else if (index === 1) {
+    element.addEventListener("dragover", function (e) {
+      e.preventDefault();
+      setTimeout(() => {
+        dropZone.classList.add("pizza2");
+        dropZone.classList.remove("pizza1");
+        dropZone.classList.remove("pizza3");
+        greet.style.visibility = "visible";
+      }, 1000);
+    });
+
+    element.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      setTimeout(() => {
+        dropZone.classList.add("pizza2");
+        dropZone.classList.remove("pizza1");
+        dropZone.classList.remove("pizza3");
+        greet.style.visibility = "visible";
+      }, 1000);
+    });
+  } else {
+    element.addEventListener("dragover", function (e) {
+      e.preventDefault();
+      setTimeout(() => {
+        dropZone.classList.add("pizza3");
+        dropZone.classList.remove("pizza2");
+        dropZone.classList.remove("pizza1");
+        greet.style.visibility = "visible";
+        
+      }, 1000);
+    });
+
+    element.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      setTimeout(() => {
+        dropZone.classList.add("pizza3");
+        dropZone.classList.remove("pizza2");
+        dropZone.classList.remove("pizza1");
+        greet.style.visibility = "visible";
+      }, 1000);
+    });
+  }
+});
+
+
+dropZone.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+
+dropZone.addEventListener("drop", function (event) {
+  event.preventDefault();
+  document.getElementById("ul").style.visibility = "visible";
+  ingredient_title.style.visibility = "visible";
 });

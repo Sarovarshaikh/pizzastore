@@ -1,231 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Baumans&family=Fascinate&family=Lato:ital,wght@1,900&family=Lobster&family=Manrope:wght@400;500&family=Open+Sans:wght@400;500;600;700&family=Passions+Conflict&display=swap");
+
 body {
-  /* background: #333; */
-  font-family: "Oswald", sans-serif;
-  box-sizing: border-box;
+  background-color: #DAF7A6;
+  overflow-y: auto;
 }
-.Head {
-  font-size: 2.5rem;
-  color: #fff;
-}
-.MainMenuBox {
-  display: block;
-  padding: 20px;
-  display: flex;
-  /* width: 1000px; */
-  margin-top: 200px;
-  position: relative;
-  border: 1px solid #000;
-  justify-content: space-between;
-}
-.PizzaOne {
-  width: 250px;
-  height: 250px;
-  cursor: pointer;
-  background-image: url("https://i.ibb.co/gzs3hTn/pizza-base2.png");
-  background-size: contain;
-  border-radius: 50%;
-  display: inline-block;
-  float: left;
-  /* background-position: center center; */
-  /* border: 1px solid #000; */
+.pizza_heading .pizza {
+  color: #b73e3e;
+  font-family: "Lobster", cursive;
+  font-size: 70px;
+  font-weight: bolder;
 }
 
-.PizzaTwo {
-  width: 250px;
-  height: 250px;
-  cursor: pointer;
-  /* border: 1px solid #000; */
-  background-image: url("https://i.ibb.co/KjBXVdC/pizza-base1.png");
-  background-size: contain;
-  display: inline-block;
-  float: right;
-  /* border-radius: 50%; */
-  /* margin-left: 30%; */
-}
-ul {
-  /* width: 27%; */
-  /* height: 120vh; */
-  display: inline-block;
-  display: flex;
-  /* position: absolute;
-  right: 0%;
-  top: 100px; */
-  text-decoration: none;
-  list-style: none;
-  justify-content: space-evenly;
-  align-items: center;
+.pizza_heading .com {
+  color: #f49d1a;
+  font-family: "poppins", sans-serif;
+  font-size: 40px;
 }
 
-.list {
-  display: none;
-  transition: 3s all;
-}
-.position {
-  color: #fff;
-  position: relative;
-  top: 120px;
-  left: 10px;
-  font-size: 1.3rem;
-}
-.positionM {
-  /* border: 1px solid #000; */
-  color: #fff;
-  position: relative;
-  top: 250px;
-  left: 60px;
-  font-size: 1.8rem;
-}
-.Pizza1 {
-  width: 100px;
-  height: 100px;
+.pizza_img {
+  width: 70px;
+  height: 60px;
   border-radius: 50%;
-  background-image: url("../Images/chicken.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  /* transform: scale(1.5) */
-  cursor: grab;
-}
-.Pizza2 {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  background-image: url("../Images/spicy.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: 20px;
-  cursor: grab;
-}
-.Pizza3 {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  background-image: url("https://www.shutterstock.com/shutterstock/photos/1257375187/display_1500/stock-vector-fresh-pizza-with-tomato-cheese-olive-sausage-onion-basil-traditional-italian-fast-food-top-1257375187.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: grab;
-}
-.Pizza4 {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  background-image: url("../Images/onion.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #fff;
-  margin-left: 20px;
-  cursor: grab;
-}
-.dropPoint {
-  width: 350px;
-  height: 350px;
-  border: 30px dashed yellow;
-  background-color: #222;
-  box-shadow: 5px 10px 10px black;
   position: absolute;
-  top: 300px;
-  right: 37%;
+  top: 6.5%;
+  left: 36%;
+}
+
+.main-heading {
+  display: flex;
+  justify-content: center;
+}
+
+.base {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#draggable-element1,
+#draggable-element2 {
+  position: relative;
   border-radius: 50%;
-  transition: 1s all;
-  z-index: 1000;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
 }
-.dropPoint:hover {
-  border: 30px solid #000;
-  /* border-style: solid; */
-  background-color: #fff;
+.base1 {
+  background-image: url("https://5.imimg.com/data5/RV/MJ/MY-16339859/pizza-base-500x500.jpg");
+  background-size: cover;
+  margin-left: 30%;
+  margin-top: 10%;
 }
-.footer {
-  /* position: absolute; */
-  /* bottom: 0; */
-  color: #fff;
-  position: absolute;
-  bottom: 0%;
-  margin: auto;
+.base2 {
+  background-image: url("https://5.imimg.com/data5/TS/FJ/MY-68150548/pizza-base-500x500.jpg");
+  background-size: cover;
+  margin-left: 30%;
+  margin-top: 9%;
 }
 #dropzone {
+  border: 2px solid;
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  border-radius: 50%;
   position: relative;
-  border: 10px dotted #fff;
-  border-radius: 20px;
-  color: white;
-  font: bold 24px/200px arial;
-  width: 200px;
-  height: 200px;
-  margin: 30px auto;
+  border: 2px dotted maroon;
+  display: flex;
+  margin-top: 5%;
+  background-color: #FFC300 ;
+}
+.add1 {
+  background-image: url("https://5.imimg.com/data5/RV/MJ/MY-16339859/pizza-base-500x500.jpg");
+  background-size: cover;
+}
+.add2 {
+  background-image: url("https://5.imimg.com/data5/TS/FJ/MY-68150548/pizza-base-500x500.jpg");
+  background-size: cover;
+}
+.pizza1 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdedaQRf36jmxlWQYS0Og1cqHG2IYO_CKsiw&usqp=CAU");
+  background-size: cover;
+}
+.pizza2 {
+  background-image: url("https://5.imimg.com/data5/KI/LC/GLADMIN-15621787/margerita-pizza-500x500.png");
+  background-size: cover;
+  background-position: center;
+}
+.pizza3 {
+  background-image: url("https://b.zmtcdn.com/data/pictures/chains/8/800318/28c01b6cd6579b395c8b92b61f3fe794.jpg?fit=around|300:273&crop=300:273;*,*");
+  background-size: cover;
+  background-position: center;
+}
+
+ul {
+  list-style: none;
+  align-items: center;
+  visibility: hidden;
+}
+li {
+  list-style: none;
+  margin: 40px 20px 20px 20px;
+}
+.li1 {
+  width: 150px;
+  height: 150px;
+  margin-left: 25%;
   text-align: center;
+  background-image: url("../Images/chicken.png");
+  background-size: cover;
+  background-position: center;
+}
+.li2 {
+  width: 120px;
+  height: 120px;
+  margin-top: 30%;
+  background-image: url("../Images/onion.png");
+  background-size: cover;
+  background-position: center;
+}
+.li3 {
+  width: 140px;
+  height: 130px;
+  margin-top: -35%;
+  margin-left: 56%;
+  background-image: url("../Images/spicy.png");
+  background-size: cover;
+  background-position: center;
 }
 
-#dropzone:hover {
-  border: 10px solid #fe5;
-  color: #fe5;
-  cursor: pointer;
-  background-color: #222;
-}
-
-.hold {
-  transition: 2s;
-  transform: rotate(360deg);
-  border: 10px dashed goldenrod;
-}
-.pizzabaseOne {
-  background-image: url("https://i.ibb.co/gzs3hTn/pizza-base2.png");
-  background-size: cover;
-  z-index: 100;
-}
-.pizzabaseTwo {
-  background-image: url("https://i.ibb.co/KjBXVdC/pizza-base1.png");
-  background-size: cover;
-}
-.Pizza1Pepperoni {
-  background-image: url("https://sipbitego.com/wp-content/uploads/2021/08/Pepperoni-Pizza-Recipe-Sip-Bite-Go.jpg");
-  background-size: cover;
-}
-.Pizza1Mushrooms {
-  background-image: url("https://previews.123rf.com/images/macrovector/macrovector1611/macrovector161100365/65372448-colorful-round-tasty-pizza-on-white-background-with-salami-tomato-mushrooms-and-olives-flat-isolated.jpg");
-  background-size: cover;
-}
-
-.Pizza1Onions {
-  background-image: url("https://media.istockphoto.com/id/1097437724/vector/fresh-pizza-with-tomato-cheese-olive-sausage-onion.jpg?s=612x612&w=0&k=20&c=2gehio5J1rBmtOsaa7dhoytUfdszq6uU424aAo5uORA=");
-  background-size: cover;
-}
-
-.Pizza1Peppers {
-  background-image: url("https://i.pinimg.com/564x/19/7f/34/197f34e246a2d45beb57072243e7c622.jpg");
-  background-size: cover;
-}
-
-/* #dropzone.dropped {
-  background: #222;
-  border: 10px solid #444;
-} */
-
-/* #dropzone div {
+.right-part-pizzaIngredients {
+  width: 30%;
+  height: 550px;
+  border-radius: 5px;
+  box-shadow: 5px 2px 5px 2px rgba(0, 0, 0, 0.325);
+  background: #fff;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-} */
+  right: 40px;
+  top: 20%;
+  text-align: center;
+  font-family: "poppins", sans-serif;
+}
 
-/* #dropzone img {
-  border-radius: 10px;
-  vertical-align: middle;
-  max-width: 95%;
-  max-height: 95%;
-} */
-
-/* #dropzone [type="file"] {
-  cursor: pointer;
+.left-part-pizzaBase {
+  width: 30%;
+  height: 550px;
+  border-radius: 5px;
+  box-shadow: 5px 2px 5px 2px rgb(0 0 0/ 0.6);
+  background: #fff;
   position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-} */
+  left: 40px;
+  top: 20%;
+  text-align: center;
+  font-family: "poppins", sans-serif;
+}
+
+#line1 {
+  width: 150px;
+  border: 1.5px solid red;
+  margin-top: -20px;
+}
+.foodDel {
+  position: relative;
+  animation-name: shaikh;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transition-duration: 2s;
+  width: 100px;
+}
+.dlBoy img{
+    
+}
+.delivery{
+    padding: 10px;
+}
+.cookingImg{
+    position: relative;
+    animation-name: sarwar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transition-duration: 2s;
+    
+}
+
+@keyframes sarwar {
+    from{
+        left:0px;
+    }
+    to{
+        left: 100px;
+    }
+}
+.foodDel{
+    position: relative;
+    animation-name: shaikh;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transition-duration: 2s; 
+    width: 100px;
+}
+@keyframes shaikh {
+    from{
+        left:0px;
+    }
+    to{
+        left: 100%;
+    }
+}
+.roadImg {
+    position: relative;
+    top: -56px;
+    z-index: -1;
+    /* width: 100; */
+    width: 100%;
+    height: 119px;
+}
+.homeDec img{
+    width: 100px;
+    height: 100px;
+}
+.author{
+  background-image: linear-gradient( to left, rgba(212, 255, 0, 0.904),rgba(244, 98, 28 ));
+
+}
+.author::first-letter{
+  height: 200px;
+  color: cyan;
+  font-style: italic;
+}
+div.homeDec{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 10px 20px;
+  background-color: aliceblue;
+}
+
+@media screen and (max-width: 320px) {
+  .left-part-pizzaBase {
+    width: 90%;
+    height:450px;
+    border-radius: 5px;
+    box-shadow: 5px 2px 5px 2px rgb(0 0 0/ 0.6);
+    background: #fff;
+    position: absolute;
+    left:15px;
+    top:110%;
+    text-align: center;
+    font-family: "poppins", sans-serif;
+  }
+  #dropzone{
+width: 0%;
+height: 100%;
+  }
+
+  .right-part-pizzaIngredients {
+    width:90%;
+    height:450px;
+    border-radius: 5px;
+    box-shadow: 5px 2px 5px 2px rgba(0, 0, 0, 0.325);
+    background: #fff;
+    position: absolute;
+    right:15px;
+    top: 220%;
+    text-align: center;
+    font-family: "poppins", sans-serif;
+  }
+
+  #dropzone {
+    border: 2px solid;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border-radius: 50%;
+    position: relative;
+    border: 2px dotted maroon;
+    display: flex;
+    margin-top: 10%;
+    background-color: orangered;
+  }
+
+  .pizza_img{
+    display: none;
+  }
+
+  ul {
+    list-style: none;
+    align-items: center;
+    visibility: visible;
+  }
+
+  .li1 {
+    width: 80px;
+    height: 80px;
+    margin-top: 30%;
+    margin-left: 25%;
+    text-align: center;
+    background-image: url("../Images/chicken.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .li2 {
+    width: 80px;
+    height: 80px;
+    margin-top: 38%;
+    margin-left:5%;
+    background-image: url("../Images/onion.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .li3 {
+    width: 80px;
+    height: 80px;
+    margin-top: -38%;
+    margin-left: 56%;
+    background-image: url("../Images/spicy.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+}

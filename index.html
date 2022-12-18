@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizza World</title>
-    <link
-      rel="shortcut icon"
-      href="Images/pizza-23477_1280 (2).png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Pizza Store</title>
+</head>
+<body>
     
-    <div class="dropPoint"></div>
+      <div class="homeDec">
+        <h1><img src="./Images/cooking.png" alt="" class="cookingImg"> </h1>
+        <h1>Welcome To Pizza Shop </h1>
+        <h1 class="author"> Sarovar Shiakh </h1>
+       </div>
+        
+    
+<!-- delivery body -->
+<div class="delivery">
+  <div class="dlBoy">
+      <img src="./Images/food-delivery.png" alt="" class="foodDel">
+      <img src="./Images/road.png" alt="" class="roadImg">
+  </div>
+ </div>
 
-    <!-- <h1 style="color: aliceblue;">PIZZA BASES</h1> -->
-    <!-- <div class="MainMenuBox"> -->
-      <div class="PizzaOne" draggable="true">
-        <span class="positionM">Thin Base</span>
-      </div>
-      <div class="PizzaTwo" draggable="true">
-        <span class="positionM">Thick Base</span>
-      </div>
-      <ul class="list">
-      <!-- <h1 style="color: aliceblue;">Toppins With Pizza 🍄</h1> -->
-      <li id="1" class="kudos Pizza1" draggable="true">
-        <span class="position">Pepperoni</span>
-      </li>
-      <li id="2" class="kudos Pizza2" draggable="true">
-        <span class="position">Mushrooms</span>
-      </li>
-      <li id="3" class="kudos Pizza3" draggable="true">
-        <span class="position">Onions</span>
-      </li>
-      <li id="4" class="kudos Pizza4" draggable="true">
-        <span class="position">Peppers</span>
-      </li>
-    </ul>
-    <!-- </div> -->
-   
+    <aside style="position: relative;">
+        <div class="left-part-pizzaBase">
+            <h3>Pizza-Store</h3>
+            <hr id = "line1">
+            <div class="base">
+                <div id="draggable-element1" class="pizzaBase base1" draggable="true">Medium</div>
+                <div id="draggable-element2" class="pizzaBase base2" draggable="true">Large</div>         
+            </div>
+        </div>
+        <center>
+            <div class="right-part-pizzaIngredients">
+                <h3>Ingredient</h3>
+                <hr id = "line1">
+                <ul id="ul">
+                    <li id="1" class="list li1" draggable="true">Chicken</li>
+                    <li id="2" class="list li2" draggable="true">Onion</li>
+                    <li id="3" class="list li3" draggable="true">Capsium</li>
+                </ul>
+            </div>
+            <div id="dropzone"><span></span></li></div>
+        </center>
+
+    </aside>
+    
 
 
 
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
